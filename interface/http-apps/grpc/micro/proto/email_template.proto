@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = ".;ms_email_grpc_api";
+
+package email.template;
+
+message ETListAllRequest {}
+
+message ETListAllResponse {
+    repeated EmailTempate ETList = 1;
+}
+
+message EmailTempate {
+    string Code = 1;
+}

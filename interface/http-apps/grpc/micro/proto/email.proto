@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = ".;ms_email_grpc_api";
+
+package email.email;
+
+// SendEmailRequest represent SendEmail Request
+message SendEmailRequest {
+    string TemplateCode = 1;
+    EmailAddress From = 2;
+    EmailAddress To = 3;
+    repeated EmailAddress Cc = 4;
+    repeated EmailAddress Bcc = 5;
+}
+
+// EmailAddress represent EmailAddress
+message EmailAddress {
+    string Email = 1;
+    string Name = 2;
+}
+
+// SendEmailResponse represent SendEmail Response
+message SendEmailResponse {
+    string TemplateCode = 1;
+}

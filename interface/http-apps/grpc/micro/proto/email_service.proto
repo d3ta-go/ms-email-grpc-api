@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = ".;ms_email_grpc_api";
+
+package email;
+
+import "email.proto";
+import "email_template.proto";
+
+// Service
+service Email {
+    // SendEmail send email
+    rpc SendEmail(email.SendEmailRequest) returns (email.SendEmailResponse) {}
+
+    // ETListAll list all EmailTemplate
+    rpc ETListAll(template.ETListAllRequest) returns (template.ETListAllResponse) {}
+}
